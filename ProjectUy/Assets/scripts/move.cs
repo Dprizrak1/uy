@@ -9,8 +9,7 @@ public class move : MonoBehaviour {
 
     void FixedUpdate ()
     { //FixedUpdate вызывается с частотой фиксированных кадров (указываются в настройках проекта)
-        float move = Input.GetAxisRaw("Horizontal") * (float)speed * Time.deltaTime; //отдельно рассчитываем расстояяние на которое будет перемещён гг
-        transform.Translate(move, 0, 0); //функция Translate перемещает объект в направление и на расстояние от заданных координат x, y и z соответственно 
-        Debug.Log("DeltaTime: "+Time.deltaTime);
+        float move = Input.GetAxisRaw("Horizontal") * (float)speed * Time.fixedDeltaTime; //отдельно рассчитываем расстояяние на которое будет перемещён гг
+        transform.Translate(move, 0, 0); //функция Translate перемещает объект в направление и на расстояние от заданных координат x, y и z соответственно    
 	}
 }
